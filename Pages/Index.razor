@@ -1,0 +1,21 @@
+﻿@page "/Index"
+
+@using Microsoft.AspNetCore.Authorization;
+@using Microsoft.AspNetCore.Components.Authorization;
+@attribute [Authorize]
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<AuthorizeView>
+    <!--Cuando este autorizado el usuario, mensaje y el context para acceder a la informacion del usuario, retornar porpiedad nombre  -->
+   <Authorized>
+     <h1>Bienvienido @context.User.Identity!.Name </h1> 
+   </Authorized>
+
+</AuthorizeView>
+
+<SurveyPrompt Title="How is Blazor working for you?" />

@@ -1,0 +1,75 @@
+﻿@page "/"
+
+<!--Hace referencia al LoginLayuout-->
+@layout LoginLayout 
+
+@inject HttpClient httpClient
+@using Loginn.Client.Extensiones;
+@using Loginn.Shared;
+@using Microsoft.AspNetCore.Components.Authorization
+@inject AuthenticationStateProvider autenticacionProvider 
+
+<!--Nos permite reedirreccionar una vista de otra-->
+@inject NavigationManager navManager 
+
+<div class="row mt-5">
+    <div class="col-lg-4 offset-lg-4 border">
+
+        <div class="mb-3 text-center">
+            <h3>Login</h3>
+        </div>
+        
+        <div class="mb-3">
+            <label>Correo</label>
+            <input @bind="login.Correo" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Contraseña</label>
+            <input @bind="login.Clave" class="form-control" />
+        </div>
+
+        <div class="m-b3">
+            <button @onclick="IniciarSesion" class="btn btn-primary"> Login </button>
+
+        </div>
+
+
+
+    </div>
+
+</div>
+
+
+@code {
+    private LoginDTO login = new LoginDTO(); //objeto login donde tiene como valor correo y clave 
+
+    //Metodo privado async  y es una tarea
+
+    private async Task IniciarSesion()
+    {
+        //Consumir la api desde el controlador 
+
+        var loginResponse = await httpClient.PostAsJsonAsync<LoginDTO>("/api/Usuario/Login", login);
+
+        //si en en el login está un codigo exitoso
+
+        if (loginResponse.IsSuccessStatusCode) 
+        {
+            // obtener de la sesion el usuario
+            var sesionUsuario = await loginResponse.Content.ReadFromJsonAsync<SesionDTO>();
+
+            //Utiliza el servicio de autentificacion
+            var autenticacionExt = (AutentificacionExtension)autenticacionProvider;
+            await autenticacionExt.ActualizarEstadoAutenticacion(sesionUsuario); //guardar dentro de la sesion Storage, notificando que el estado de la autentificacion a cambiado. 
+
+            // Navegar
+
+            navManager.NavigateTo("/Index");
+
+
+
+        }
+    }
+
+}
