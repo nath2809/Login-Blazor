@@ -1,0 +1,11 @@
+C:\Users\BB7212\source\repos\Loginn\Loginn\Shared\bin\Debug\net7.0\Loginn.Shared.deps.json
+C:\Users\BB7212\source\repos\Loginn\Loginn\Shared\bin\Debug\net7.0\Loginn.Shared.dll
+C:\Users\BB7212\source\repos\Loginn\Loginn\Shared\bin\Debug\net7.0\Loginn.Shared.pdb
+C:\Users\BB7212\source\repos\Loginn\Loginn\Shared\obj\Debug\net7.0\Loginn.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\BB7212\source\repos\Loginn\Loginn\Shared\obj\Debug\net7.0\Loginn.Shared.AssemblyInfoInputs.cache
+C:\Users\BB7212\source\repos\Loginn\Loginn\Shared\obj\Debug\net7.0\Loginn.Shared.AssemblyInfo.cs
+C:\Users\BB7212\source\repos\Loginn\Loginn\Shared\obj\Debug\net7.0\Loginn.Shared.csproj.CoreCompileInputs.cache
+C:\Users\BB7212\source\repos\Loginn\Loginn\Shared\obj\Debug\net7.0\Loginn.Shared.dll
+C:\Users\BB7212\source\repos\Loginn\Loginn\Shared\obj\Debug\net7.0\refint\Loginn.Shared.dll
+C:\Users\BB7212\source\repos\Loginn\Loginn\Shared\obj\Debug\net7.0\Loginn.Shared.pdb
+C:\Users\BB7212\source\repos\Loginn\Loginn\Shared\obj\Debug\net7.0\ref\Loginn.Shared.dll
